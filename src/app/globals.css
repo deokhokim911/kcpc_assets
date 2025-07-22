@@ -24,3 +24,31 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* 플레이스홀더 텍스트 가독성 향상 */
+::placeholder {
+  color: #4B5563 !important; /* gray-600 */
+  opacity: 1;
+}
+
+/* Firefox */
+::-moz-placeholder {
+  color: #4B5563 !important;
+  opacity: 1;
+}
+
+/* Edge */
+::-ms-input-placeholder {
+  color: #4B5563 !important;
+}
+
+/* Select 요소의 옵션 텍스트 가독성 향상 */
+select option {
+  color: #111827; /* gray-900 */
+  background-color: white;
+}
+
+/* Select 요소 자체의 텍스트 가독성 향상 */
+select {
+  color: #111827; /* gray-900 */
+}
