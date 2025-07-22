@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, Legend } from 'recharts';
 import { CategorySummary, ExpenditureRecord } from '@/types/expenditure';
 import { formatCurrency, getCategorySummary } from '@/utils/dataProcessor';

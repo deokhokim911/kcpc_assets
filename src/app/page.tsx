@@ -26,7 +26,7 @@ import {
   formatCurrency 
 } from '@/utils/dataProcessor';
 import { ExpenditureRecord } from '@/types/expenditure';
-import { Legend } from 'recharts';
+
 
 const Dashboard: React.FC = () => {
   const [data, setData] = useState<ExpenditureRecord[]>([]);
@@ -143,22 +143,7 @@ const Dashboard: React.FC = () => {
     }
   };
 
-  const renderCustomLegend = (props: any) => {
-    const { payload } = props;
-    return (
-      <ul className="flex flex-wrap gap-2 text-xs mt-2">
-        {payload.map((entry: any, idx: number) => {
-          const d = entry.payload;
-          return (
-            <li key={idx} className="flex items-center gap-1">
-              <span style={{ color: entry.color, fontWeight: 700 }}>■</span>
-              {`${d.category || d.department} (${d.percentage.toFixed(1)}%, ${formatCurrency(d.totalAmount)})`}
-            </li>
-          );
-        })}
-      </ul>
-    );
-  };
+
 
   const deptListYearOptions = Array.from(new Set(
     data

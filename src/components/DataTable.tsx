@@ -35,7 +35,7 @@ const DataTable: React.FC<DataTableProps> = ({ data }) => {
 
   // 필터링 및 정렬된 데이터
   const filteredAndSortedData = useMemo(() => {
-    let filtered = data.filter(item => {
+    const filtered = data.filter(item => {
       // 검색어 필터링
       if (filters.search) {
         const searchLower = filters.search.toLowerCase();
@@ -72,15 +72,15 @@ const DataTable: React.FC<DataTableProps> = ({ data }) => {
 
     // 정렬
     filtered.sort((a, b) => {
-      let aValue: any = a[filters.sortBy];
-      let bValue: any = b[filters.sortBy];
+      let aValue: string | number | Date = a[filters.sortBy];
+      let bValue: string | number | Date = b[filters.sortBy];
 
       if (filters.sortBy === 'date') {
         aValue = new Date(a.date).getTime();
         bValue = new Date(b.date).getTime();
       }
 
-      if (typeof aValue === 'string') {
+      if (typeof aValue === 'string' && typeof bValue === 'string') {
         aValue = aValue.toLowerCase();
         bValue = bValue.toLowerCase();
       }

@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { useAuth } from '@/contexts/AuthContext';
-import { LogOut, User, Download, FileText } from 'lucide-react';
+import { LogOut, User, Download } from 'lucide-react';
 
 const Header: React.FC = () => {
   const { logout } = useAuth();

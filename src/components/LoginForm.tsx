@@ -25,7 +25,7 @@ const LoginForm: React.FC = () => {
       if (!success) {
         setError('사용자명 또는 비밀번호가 올바르지 않습니다.');
       }
-    } catch (err) {
+    } catch {
       setError('로그인 중 오류가 발생했습니다.');
     }
   };

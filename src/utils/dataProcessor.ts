@@ -90,7 +90,7 @@ export function getYearlySummary(data: ExpenditureRecord[]): YearlySummary[] {
         total: existing.total + record.amount,
         count: existing.count + 1
       });
-    } catch (error) {
+    } catch {
       // Invalid date format, skip
     }
   });
@@ -139,7 +139,6 @@ export function getMonthlyTrend(data: ExpenditureRecord[]): MonthlyTrend[] {
       const year = getYear(date);
       const month = getMonth(date);
       const key = `${year}-${month.toString().padStart(2, '0')}`;
-      const monthName = format(date, 'yyyy년 MM월', { locale: ko });
       
       const existing = monthMap.get(key) || { total: 0, count: 0, year };
       monthMap.set(key, {
@@ -147,7 +146,7 @@ export function getMonthlyTrend(data: ExpenditureRecord[]): MonthlyTrend[] {
         count: existing.count + 1,
         year
       });
-    } catch (error) {
+    } catch {
       // Invalid date format, skip
     }
   });
